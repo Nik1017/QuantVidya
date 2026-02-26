@@ -21,9 +21,10 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({                   //for entertaing http request from frontend
-    origin:"http://localhost:3000",
-    credentials: true, //allows cookies
+app.use(cors({
+    // Add your live frontend URL to the list
+    origin: ["http://localhost:3000", "https://quant-vidya-xfgu.vercel.app"],
+    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
